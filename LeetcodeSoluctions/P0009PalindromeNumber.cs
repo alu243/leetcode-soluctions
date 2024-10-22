@@ -8,12 +8,12 @@ namespace LeetcodeSoluctions.P9;
 
 public class Solution
 {
+    //https://leetcode.com/problems/palindrome-number/
     public bool IsPalindrome(int x)
     {
         if (x < 0) return false;
         if (x == 0) return true;
         return IsPalindromic(x.ToString());
-
     }
 
     private bool IsPalindromic(string s)

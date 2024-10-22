@@ -7,6 +7,7 @@ namespace LeetcodeSoluctions.P7;
 
 public class Solution
 {
+    //https://leetcode.com/problems/reverse-integer/
     // 調速度的話，也要考慮 new class 的速度(有點偷雞)
     private StringBuilder reverse = new StringBuilder();
     public int Reverse(int x)

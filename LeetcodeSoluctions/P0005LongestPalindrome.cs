@@ -5,6 +5,8 @@ namespace LeetcodeSoluctions.P5;
 
 public class Solution
 {
+    //https://leetcode.com/problems/longest-palindromic-substring/
+    // 從頭尾減回去可以有效減少重複計算次數
     int maxLength = 1;
     int maxStart = 0;
     public string LongestPalindrome(string s)
@@ -42,19 +44,10 @@ public class Solution
 [TestFixture()]
 public class Test
 {
-    private Solution solution;
-
-    [SetUp]
-    public void Setup()
-    {
-        // 在每個測試之前都初始化一個 Calculator 對象
-        solution = new Solution();
-    }
-
     [Test()]
     public void TestSolution()
     {
-        var result = solution.LongestPalindrome("babad");
+        var result = new Solution().LongestPalindrome("babad");
         ClassicAssert.AreEqual("bab", result);
     }
 }

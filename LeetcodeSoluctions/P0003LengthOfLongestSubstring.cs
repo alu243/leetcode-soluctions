@@ -1,16 +1,15 @@
-﻿using NUnit.Framework.Legacy;
-using NUnit.Framework;
+﻿using NUnit.Framework;
+using NUnit.Framework.Legacy;
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LeetcodeSoluctions.P3;
 public class Solution
 {
-
+    // https://leetcode.com/problems/longest-substring-without-repeating-characters/
     // this is substring manupalte more important than compare char duplcate
+    // 解法：用 queue 判斷是否重複字串
     public int LengthOfLongestSubstring(string s)
     {
         if (s == null) throw new LeetCodeException("string cannot be null");
@@ -21,9 +20,9 @@ public class Solution
         foreach (int c in s)
         {
             queueChar(hash, c);
-            result = result < hash.Count ? hash.Count : result;
+            result = Math.Max(result, hash.Count);
         }
-        result = result < hash.Count ? hash.Count : result;
+        result = Math.Max(result, hash.Count);
         return result;
     }
 
@@ -52,7 +51,21 @@ public class Solution
         return result;
     }
 
-    public int LengthOfLongestSubstring2(string s)
+
+
+    private void queueChar(Queue<int> queue, int c)
+    {
+        while (queue.Contains(c))
+        {
+            queue.Dequeue();
+        }
+        queue.Enqueue(c);
+    }
+}
+
+public class Solution2
+{
+    public int LengthOfLongestSubstring(string s)
     {
         if (s == null) throw new LeetCodeException("string cannot be null");
         if (s.Length > 5 * 10000) throw new LeetCodeException("string too long");
@@ -78,46 +91,16 @@ public class Solution
         hash.Add(c, null);
     }
 
-    private void addChar2(Dictionary<char, bool?> hash, char c)
-    {
-        bool result = hash.ContainsKey(c);
-        while (result)
-        {
-            hash.Remove(hash.First().Key);
-            result = hash.ContainsKey(c);
-        }
-        hash.Add(c, null);
-    }
-
-    private void queueChar(Queue<int> hash, int c)
-    {
-        bool result = hash.Contains(c);
-        while (result)
-        {
-            hash.Dequeue();
-            result = hash.Contains(c);
-        }
-        hash.Enqueue(c);
-    }
 }
 
 
 [TestFixture()]
 public class Test
 {
-    private Solution solution;
-
-    [SetUp]
-    public void Setup()
-    {
-        // 在每個測試之前都初始化一個 Calculator 對象
-        solution = new Solution();
-    }
-
     [Test()]
     public void TestSolution()
     {
-        var result = solution.LengthOfLongestSubstring("abcabcbb");
+        var result = new Solution().LengthOfLongestSubstring("abcabcbb");
         ClassicAssert.AreEqual(3, result);
     }
 }

@@ -6,6 +6,9 @@ namespace LeetcodeSoluctions.P2;
 
 public class Solution
 {
+    //https://leetcode.com/problems/add-two-numbers/
+    // 訓練 linked list 的用法
+
     public ListNode AddTwoNumbers(ListNode l1, ListNode l2)
     {
         var result = l1;
@@ -15,14 +18,14 @@ public class Solution
         int moreThan9 = 0;
         while (l1 != null || l2 != null)
         {
+            #region 限制條件判斷
             i++;
             if (i > 100) throw new LeetCodeException("list too long");
             if (i > 1 && l1 != null && l1.next == null && l1.val == 0) throw new LeetCodeException("list 1 leading zero");
             if (i > 1 && l2 != null && l2.next == null && l2.val == 0) throw new LeetCodeException("list 2 leading zero");
-
-            this.numberConstraint(l1);
-            this.numberConstraint(l2);
-
+            this.NumberConstraint(l1);
+            this.NumberConstraint(l2);
+            #endregion
 
             if (l1 == null)
             {
@@ -64,8 +67,8 @@ public class Solution
             if (i > 1 && l1 != null && l1.next == null && l1.val == 0) throw new LeetCodeException("list 1 leading zero");
             if (i > 1 && l2 != null && l2.next == null && l2.val == 0) throw new LeetCodeException("list 2 leading zero");
 
-            this.numberConstraint(l1);
-            this.numberConstraint(l2);
+            this.NumberConstraint(l1);
+            this.NumberConstraint(l2);
 
             var l1v = l1?.val ?? 0;
             var l2v = l2?.val ?? 0;
@@ -95,7 +98,7 @@ public class Solution
         return result;
     }
 
-    private void numberConstraint(ListNode num)
+    private void NumberConstraint(ListNode num)
     {
         if (num == null) return;
         if (num.val < 0 || num.val > 9) throw new LeetCodeException("target too large or too small");

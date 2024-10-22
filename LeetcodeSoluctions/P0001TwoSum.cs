@@ -8,6 +8,7 @@ namespace LeetcodeSoluctions.P1;
 
 public class Solution
 {
+    //https://leetcode.com/problems/two-sum/
     public int[] TwoSum(int[] nums, int target)
     {
         Dictionary<int, List<int>> ans = new Dictionary<int, List<int>>();

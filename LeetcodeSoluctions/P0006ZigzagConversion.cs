@@ -10,6 +10,7 @@ namespace LeetcodeSoluctions.P6;
 
 public class Solution
 {
+    //https://leetcode.com/problems/zigzag-conversion/
     // 最佳解~~~
     public string Convert(string s, int numRows)
     {

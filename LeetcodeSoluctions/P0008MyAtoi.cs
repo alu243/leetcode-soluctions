@@ -8,7 +8,8 @@ namespace LeetcodeSoluctions.P8;
 
 public class Solution
 {
-    // 最佳解
+    //https://leetcode.com/problems/string-to-integer-atoi/
+    // 速度最佳解
     public int MyAtoi(string s)
     {
         bool isMinus = false;
@@ -46,9 +47,7 @@ public class Solution
                 if (result >= int.MaxValue) return int.MaxValue;
                 if (result <= int.MinValue) return int.MinValue;
             }
-
         }
-
         return (int)result;
     }
 

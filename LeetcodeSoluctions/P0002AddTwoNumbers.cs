@@ -119,21 +119,12 @@ public class ListNode
 [TestFixture()]
 public class Test
 {
-    private Solution solution;
-
-    [SetUp]
-    public void Setup()
-    {
-        // 在每個測試之前都初始化一個 Calculator 對象
-        solution = new Solution();
-    }
-
     [Test()]
     public void TestSolution()
     {
         var l1 = new ListNode(2, new ListNode(4, new ListNode(3)));
         var l2 = new ListNode(5, new ListNode(6, new ListNode(4)));
-        var result = solution.AddTwoNumbers(l1, l2);
+        var result = new Solution().AddTwoNumbers(l1, l2);
         ClassicAssert.AreEqual(7, result.val);
         ClassicAssert.AreEqual(0, result.next.val);
         ClassicAssert.AreEqual(8, result.next.next.val);

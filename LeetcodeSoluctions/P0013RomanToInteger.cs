@@ -101,11 +101,9 @@ public class Solution
 [TestFixture()]
 public class Test
 {
-
     [Test()]
     public void TestSolution()
     {
         ClassicAssert.AreEqual(1994, new Solution().RomanToInt("MCMXCIV"));
-
     }
 }

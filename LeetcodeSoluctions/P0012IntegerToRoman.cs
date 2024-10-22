@@ -62,8 +62,6 @@ public class Test
     [Test()]
     public void TestSolution()
     {
-        var a = 3999 / 1000;
-        var b = a + 1;
         //ClassicAssert.AreEqual(true, new Solution().IntToRoman("a", "a*a"));
 
     }

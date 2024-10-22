@@ -7,7 +7,7 @@ namespace LeetcodeSoluctions.P7;
 
 public class Solution
 {
-    //https://leetcode.com/problems/reverse-integer/
+    // https://leetcode.com/problems/reverse-integer/
     // 調速度的話，也要考慮 new class 的速度(有點偷雞)
     private StringBuilder reverse = new StringBuilder();
     public int Reverse(int x)
@@ -72,27 +72,15 @@ public class Solution
 [TestFixture()]
 public class Test
 {
-    private Solution solution;
-
-    [SetUp]
-    public void Setup()
-    {
-        // 在每個測試之前都初始化一個 Calculator 對象
-        solution = new Solution();
-    }
-
     [Test()]
     public void TestSolution()
     {
-        ClassicAssert.AreEqual(2147483651, solution.Reverse(1563847412));
-        ClassicAssert.AreEqual(321, solution.Reverse(123));
-        ClassicAssert.AreEqual(-321, solution.Reverse(-123));
-        ClassicAssert.AreEqual(0, solution.Reverse(1534236469));
-        ClassicAssert.AreEqual(0, solution.Reverse(1563847412));
-        ClassicAssert.AreEqual(0, solution.Reverse(-1563847412));
-        ClassicAssert.AreEqual(-214748365, solution.Reverse(-563847412));
-
-
-
+        ClassicAssert.AreEqual(2147483651, new Solution().Reverse(1563847412));
+        ClassicAssert.AreEqual(321, new Solution().Reverse(123));
+        ClassicAssert.AreEqual(-321, new Solution().Reverse(-123));
+        ClassicAssert.AreEqual(0, new Solution().Reverse(1534236469));
+        ClassicAssert.AreEqual(0, new Solution().Reverse(1563847412));
+        ClassicAssert.AreEqual(0, new Solution().Reverse(-1563847412));
+        ClassicAssert.AreEqual(-214748365, new Solution().Reverse(-563847412));
     }
 }

@@ -44,21 +44,12 @@ public class Solution
 [TestFixture()]
 public class Test
 {
-    private Solution solution;
-
-    [SetUp]
-    public void Setup()
-    {
-        // 在每個測試之前都初始化一個 Calculator 對象
-        solution = new Solution();
-    }
-
     [Test()]
     public void TestSolution()
     {
         var nums = new int[] { 2, 7, 11, 15 };
         var target = 9;
-        var result = solution.TwoSum(nums, 9);
+        var result = new Solution().TwoSum(nums, 9);
         ClassicAssert.AreEqual(0, result[0]);
         ClassicAssert.AreEqual(1, result[1]);
     }

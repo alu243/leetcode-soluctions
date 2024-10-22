@@ -33,20 +33,11 @@ public class Solution
 [TestFixture()]
 public class Test
 {
-    private Solution solution;
-
-    [SetUp]
-    public void Setup()
-    {
-        // 在每個測試之前都初始化一個 Calculator 對象
-        solution = new Solution();
-    }
-
     [Test()]
     public void TestSolution()
     {
-        ClassicAssert.AreEqual(true, solution.IsPalindrome(121));
-        ClassicAssert.AreEqual(false, solution.IsPalindrome(-121));
-        ClassicAssert.AreEqual(false, solution.IsPalindrome(10));
+        ClassicAssert.AreEqual(true, new Solution().IsPalindrome(121));
+        ClassicAssert.AreEqual(false, new Solution().IsPalindrome(-121));
+        ClassicAssert.AreEqual(false, new Solution().IsPalindrome(10));
     }
 }

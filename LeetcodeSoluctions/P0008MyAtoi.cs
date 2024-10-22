@@ -96,23 +96,14 @@ public class Solution
 [TestFixture()]
 public class Test
 {
-    private Solution solution;
-
-    [SetUp]
-    public void Setup()
-    {
-        // 在每個測試之前都初始化一個 Calculator 對象
-        solution = new Solution();
-    }
-
     [Test()]
     public void TestSolution()
     {
-        ClassicAssert.AreEqual(0, solution.MyAtoi("0-1"));
-        ClassicAssert.AreEqual(42, solution.MyAtoi("42"));
-        ClassicAssert.AreEqual(int.MaxValue, solution.MyAtoi("2147483651"));
-        ClassicAssert.AreEqual(321, solution.MyAtoi("321"));
-        ClassicAssert.AreEqual(-321, solution.MyAtoi("-321"));
+        ClassicAssert.AreEqual(0, new Solution().MyAtoi("0-1"));
+        ClassicAssert.AreEqual(42, new Solution().MyAtoi("42"));
+        ClassicAssert.AreEqual(int.MaxValue, new Solution().MyAtoi("2147483651"));
+        ClassicAssert.AreEqual(321, new Solution().MyAtoi("321"));
+        ClassicAssert.AreEqual(-321, new Solution().MyAtoi("-321"));
         //ClassicAssert.AreEqual(-214748365, solution.Reverse(-563847412));
     }
 }

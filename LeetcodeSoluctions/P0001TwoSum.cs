@@ -1,8 +1,7 @@
 ﻿using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System;
 using System.Collections.Generic;
-using NUnit.Framework.Legacy;
-using LeetcodeSoluctions.P2;
 
 namespace LeetcodeSoluctions.P1;
 

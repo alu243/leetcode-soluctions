@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using NUnit.Framework.Legacy;
-using System;
 
 namespace LeetcodeSoluctions.P2;
 
@@ -102,17 +101,6 @@ public class Solution
     {
         if (num == null) return;
         if (num.val < 0 || num.val > 9) throw new LeetCodeException("target too large or too small");
-    }
-}
-
-public class ListNode
-{
-    public int val;
-    public ListNode next;
-    public ListNode(int val = 0, ListNode next = null)
-    {
-        this.val = val;
-        this.next = next;
     }
 }
 
